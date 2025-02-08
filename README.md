@@ -57,19 +57,19 @@ This assignment should prove that a student is able to:
   - [ ] html: `/pages/fancy-robot.html`
   - [ ] css: `/css/fancy-robot.css`
 - [ ] The container for the robot face (face shape) should be positioned/aligned following the rules:
-  - [ ] It should be horizontally centered to the viewport width and height.
-  - [ ] The container should not overlap the header section.
-- [ ] Style the shape of the robot face to follow the requirements:
-  - [ ] Should be a simple shape (square, circle, oval).
-  - [ ] Should have a border of any style, color and width.
-  - [ ] The face parts should NOT touch the border in their static positions.
-  - [ ] The corners of the face shape should NOT be a straight (right) angle.
-- [ ] Create unique random shapes for the following internal elements of the face:
-  - [ ] Left eye
-  - [ ] Right eye
-  - [ ] Nose
-  - [ ] Mouth
-  - [ ] Teeth/tooth
+  - [x] It should be horizontally centered to the viewport width and height.
+  - [x] The container should not overlap the header section.
+  - [x] Style the shape of the robot face to follow the requirements:
+  - [x] Should be a simple shape (square, circle, oval).
+  - [x] Should have a border of any style, color and width.
+  - [x] The face parts should NOT touch the border in their static positions.
+  - [x] The corners of the face shape should NOT be a straight (right) angle.
+  - [x] Create unique random shapes for the following internal elements of the face:
+  - [x] Left eye
+  - [x] Right eye
+  - [x] Nose
+  - [x] Mouth
+  - [x] Teeth/tooth
   - [ ] **!!!Optional** Add any other part you want.
 - [ ] Create unique random shapes for the following external elements of the face:
   - [ ] Hair style

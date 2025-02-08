@@ -3,15 +3,23 @@
   padding: 30px;
   margin-top: 60px;
   width: 100%;
+  position: fixed;
+  z-index: 10;
 }
 
 .legal-header h1 {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  z-index: 9;
+  margin-bottom: 10px;
+
 }
 
 main {
+  margin-top: 160px;
+  margin-bottom: 170px;
+
 }
 
 section {
@@ -24,12 +32,17 @@ section {
   margin: 0 auto;
   color: white;
 }
+.section-bottom {
+  margin-bottom: 70px;
+}
 
 .section-label {
   width: 100%;
   background-color: #2b2d3b;
   height: max-content;
   padding: 10px 16px;
+  position: sticky;
+  top: 180px;
 }
 
 .document-content {
@@ -59,6 +72,9 @@ footer {
   background-color: #e2e2e2;
   padding: 0 30px;
   min-height: 70px;
+  position: fixed;
+  z-index: 10;
+  bottom: 0px;
 }
 
 .footer-content {
