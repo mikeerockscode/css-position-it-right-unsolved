@@ -25,7 +25,18 @@ body {
   background-color: #2e3b4e;
   border: 5px solid #00aaff;
   border-radius: 20px;
+  background: linear-gradient(86deg, #6c2b2b, transparent);
 }
+
+@keyframes scaleUp {
+  from { transform: scale(0.5); }
+  to { transform: scale(1); }
+}
+
+.robot-eye-left:hover {
+  animation: scaleUp 1.5s ease-in-out infinite;
+}
+
 
 .robot-eye-left {
   position: absolute;
@@ -33,7 +44,6 @@ body {
   left: 55px;
   width: 40px;
   height: 60px;
-  background-size: cover;
   border-radius: 10px;
   background-color: #3a5f7d;
   clip-path: polygon(0 0, var(--s) 0, 100% 50%, var(--s) 100%, 0 100%, calc(100% - var(--s)) 50%);
@@ -41,26 +51,46 @@ body {
   --s: 37%;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.robot-eye-right {
+  animation: fadeIn 5s infinite;
+}
+
 .robot-eye-right {
   position: absolute;
   top: 122px;
   right: 55px;
   width: 40px;
-  height: 10px;
+  height: 40px;
   background-color: #3a5f7d;
   clip-path: polygon(102% -160%, -20% 100%, 100% 100%);
+  background-size: cover;
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/007/718/159/small/orange-and-yellow-circle-lines-gradient-on-blue-background-free-vector.jpg);
+}
 
+ 
+@keyframes moveAround {
+  0% { transform: translate(-50%, -50%) translate(0, 0); }
+  25% { transform: translate(-50%, -50%) translate(50px, 0); }
+  50% { transform: translate(-50%, -50%) translate(50px, 50px); }
+  75% { transform: translate(-50%, -50%) translate(0, 50px); }
+  100% { transform: translate(-50%, -50%) translate(0, 0); }
 }
 
 .robot-nose {
   position: absolute;
-  top: 180px;
-  left: 50%;
-  transform: translateX(-47%);
+  top: 50%;
+  left: 43%;
+  transform: translate(-50%, -50%);
   width: 44px;
   height: 36px;
   background-color: #ff9900;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: moveAround 4s infinite;
 }
 
 .robot-teeth {
@@ -74,17 +104,26 @@ body {
   justify-content: center;
 }
 
+@keyframes chatter {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+}
+
 .robot-tooth1, .robot-tooth2, .robot-tooth3,
 .robot-tooth4, .robot-tooth5, .robot-tooth6 {
   --c: 85;
-  width: 20px;
+  width: 1.25rem;
   aspect-ratio: 3 / 2;
   mask: radial-gradient(calc(var(--c)* 1%) 100% at 50% calc(-100%* cos(asin(50 / var(--c)))), #0000 calc(100% - 1px), #000);
   clip-path: ellipse(calc(var(--c)* 1%) 100% at top);
+  animation: chatter 0.1s ease-in-out infinite;
 }
 
 .robot-tooth1 {
-  width: 20px;
+  width: 1.25rem;
   height: 10px;
   background-color: #ffffff;
   position: relative;
@@ -92,7 +131,7 @@ body {
 }
 
 .robot-tooth2 {
-  width: 20px;
+  width: 1.25rem;
   height: 10px;
   background-color: #ffffff;
   position: relative;
@@ -100,7 +139,7 @@ body {
 }
 
 .robot-tooth3{
-  width: 20px;
+  width: 1.25rem;
   height: 10px;
   background-color: #ffffff;
   position: relative;
@@ -108,7 +147,7 @@ body {
 }
 
 .robot-tooth4{
-  width: 20px;
+  width: 1.25rem;
   height: 10px;
   background-color: #ffffff;
   position: relative;
@@ -116,7 +155,7 @@ body {
 }
 
 .robot-tooth5 {
-  width: 20px;
+  width: 1.25rem;
   height: 10px;
   background-color: #ffffff;
   position: relative;
@@ -124,7 +163,7 @@ body {
 }
 
 .robot-tooth6 {
-  width: 20px;
+  width: 1.25rem;
   height: 10px;
   background-color: #ffffff;
 }
@@ -134,10 +173,28 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 100px;
+  width: 25%;
   height: 100px;
   background-color: #00ff00;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.robot-ear-right {
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes colorTransition {
+  from { background-color:  #ccff00; }
+  to { background-color: #cc66ff; }
+}
+
+.robot-ear-left {
+  animation: colorTransition 5s ease-in-out infinite;
 }
 
 .robot-ear-left {
@@ -145,29 +202,46 @@ body {
   background-color: #ccff00;
 }
 
+
+
 .robot-ear-right {
   right: -100px;
   background-color: #cc66ff;
+  opacity: 20%;
+  top: 37%;
+}
+
+@keyframes wobble {
+  0%, 100% { transform: translateX(0); }
+  15% { transform: translateX(-25px) rotate(-5deg); }
+  30% { transform: translateX(20px) rotate(3deg); }
+  45% { transform: translateX(-15px) rotate(-3deg); }
+  60% { transform: translateX(10px) rotate(2deg); }
+  75% { transform: translateX(-5px) rotate(-1deg); }
+}
+
+.robot-hair-style{
+  animation: wobble 1s ease-in-out infinite;
 }
 
 .robot-hair-style {
   position: absolute;
   top: -75px;
-  left: 50%;
+  left: 36%;
   transform: translateX(-50%);
   display: flex;
   gap: 5px;
 }
 
 .robot-hair-one {
-  width: 20px;
+  width: 1.25rem;
   height: 70px;
   background-color: #00cc00;
   clip-path: polygon(50% 0%, 4% 100%, 101% 100%);
 }
 
 .robot-hair-two {
-  width: 20px;
+  width: 1.25rem;
   height: 80px;
   background-color: #ffcc00;
   clip-path: polygon(50% 0%, 4% 100%, 101% 100%);
@@ -176,7 +250,7 @@ body {
 }
 
 .robot-hair-three {
-  width: 20px;
+  width: 1.25rem;
   height: 90px;
   background-color: #ff3399;
   clip-path: polygon(50% 0%, 4% 100%, 101% 100%);
